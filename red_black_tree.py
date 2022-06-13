@@ -38,7 +38,12 @@ class RedBlackTree:
 
     def __del__(self):
         """Destruktor"""
-        print("Destruktor körs")
+        #print("Destruktor körs")
+        delattr(self, "left_child")
+        delattr(self, "right_child")
+        delattr(self, "key")
+        delattr(self, "parent")
+        delattr(self, "color")
 
     def rb_insert_fixup(self, input_node):
         """Fixar om trädet vid insert"""
